@@ -28,13 +28,36 @@ td {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+ul a{
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  background: #f8f8f8;
+  border-radius: 3px;
+  border: 1px solid #e7e7e7;
+  padding: 0 15px;
+  margin-bottom: -1px;
+}
+ul li:last-child a{
+  margin-bottom: 0;
+}
+ul .active a, ul a:hover{
+  background: #e7e7e7;
+}
+ul li{
+  float: left;
+}
+ul{
+  float: left;
+}
 </style>
 
 
 <table width="100%" height="100%" valign="bottom">
   <tr height="15%">
     <th></th>
-    <th colspan="8"><font size="10">SVV Sharing project</font></th>
+    <th colspan="8"><font size="10">SVV Sharing project-admin</font></th>
     <th valign="bottom">
       <a href="./index.php" style="test-decoration:none;" title="Dashboard" data-href="./index.php">DashBoard</a>
     </th>
@@ -43,7 +66,15 @@ tr:nth-child(even) {
     </th>
   </tr>
   <tr height="600px" width="100%">
-    <td width="160px">component index</th>
+    <td width="160px">
+       <ul>
+        <li><a>First Item</a></li>
+        <li><a>Second Item</a></li>
+        <li class="active"><a>Third Item</a></li>
+        <li><a>Fourth Item</a></li>
+      </ul>
+    
+    </th>
     <td colspan="10">content</th>
   </tr>
 </table>

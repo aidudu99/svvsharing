@@ -1,6 +1,9 @@
 /* CSS Document */
 #main{background-color: aqua;align-self: center;width: 1020px;height: 800px;margin:0 auto;}
 #header{background-color: antiquewhite;width: 1020px;height: 60px; align-self: center; text-align: center;font-size: 55px;margin-bottom: 10px}
+#navig{width: 1020px;height: 20px;}
+#dashboard{width: 20px;height: 20px;}
+#admin{width: 20px;height: 20px;}
 #index{background-color: bisque;margin-top: 5px;width: 200px;height: 400px; margin-top: 10px; float: left}
 #index_top{
 	background-color: bisque;
