@@ -137,7 +137,7 @@ function showAtRight(url) {
     <td width="160px">
        <ul  class="mcd-menu">
 			<li>
-				<a href="" onclick="showAtRight('component.jsp')>
+				<a href="" onclick="showAtRight('component.xml')>
 					<i class="edit-component"></i>
 					<strong>Components</strong>
 				</a>
