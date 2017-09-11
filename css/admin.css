@@ -21,6 +21,23 @@ body {
     padding: 50px 0;
     clear: both;
 }
+/*           background-image:url("button/btnbg.png");*/
+
+.edit-component {
+           border: none;
+           color: black;
+           font-family:Arial;
+           padding: 10px 80px;
+           text-align: center;
+           text-decoration: none;
+           display: inline-block;
+           font-size: 18px;
+           margin: 4px 2px;
+           cursor: pointer;
+           width: 100%;
+}
+
+
 @media only screen and (min-width: 1200px) {
     .container {
         width: 1210px;
@@ -66,7 +83,7 @@ body {
   -webkit-border-radius: 2px;
   
   /* == */
-  width: 250px;
+  width: 360px;
   /* == */
 }
 .mcd-menu li {
@@ -319,7 +336,7 @@ body {
   color: #777;
   
   /* == */
-  width:143px;
+  width:260px;
   float:left;
   /* == */
 }
