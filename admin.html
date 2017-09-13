@@ -19,47 +19,61 @@
  * （实现左侧菜单中的标签点击后变色的效果）
  */
 $(document).ready(function () {
-//    $('ul.nav > li').click(function (e) {
-//        //e.preventDefault();    加上这句则导航的<a>标签会失效
-//        $('ul.nav > li').removeClass('active');
-//        $(this).addClass('active');
-//    });
     $('.edit-component').click(function(){
-//        alert(this.id);
-
+        urlstr=this.id;
         $.ajax({                                      
-            url: 'php/components.php',                  //the script to call to get data          
+            url: urlstr,                  //the script to call to get data          
             data: "",                        //you can insert url argumnets here to pass to api.php
                                             //for example "id=5&parent=6"
             dataType: 'json',                //data format      
             success: function(data)          //on receive of reply
             {
-            var id = data[0];              //get id
-            var vname = data[1];           //get name
-            //--------------------------------------------------------------------
-            // 3) Update html content
-            //--------------------------------------------------------------------
-            $('#output').html("<b>id: </b>"+id+"<b> name: </b>"+vname); //Set output element html
-            //recommend reading up on jquery selectors they are awesome 
-            // http://api.jquery.com/category/selectors/
+                //--------------------------------------------------------------------
+                // Update html content
+                //--------------------------------------------------------------------
+                $('#content').html("<h1>Current Components Name:</h1>");
+                var result = data[0]; 
+                for (var i = 0; i < data.length; i++){
+                    result = data[i]; 
+                    $('#content').append("<b>" + result + "</b><br>");
+                }
+                // append the form to update components database
+                $.get( "php/components.html", function( data ) {
+                  $('#content').append( data );
+                });
             } 
-        });
-        $('#content').load(this.id);
+        }); 
+         //$('#content').load(this.id);
     });
+    // submit the form information:component name&update method
+    $(#compSubForm).click(function({
+        $.ajax({
+                type: "POST",
+                url: "php/components_1.php",
+                data : "",
+                success: function(msg) {
+                alert("Success to submit!");
+                }
+            });           
+    });
+
+    
+ 
+        return false;
+    }
   
 });
 
 </script>
-
 </head>
+
+
 <body>
-
-
 
 <table width="100%" height="100%" valign="bottom">
   <tr height="15%">
     <th></th>
-    <th colspan="8"><font size="10">SVV Sharing project-admin</font></th>
+    <th colspan="8"><font size="10">SVV Sharing project-admin&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</font></th>
     <th valign="bottom">
       <a href="./index.php" style="test-decoration:none;" title="Dashboard" data-href="./index.php">DashBoard</a>
     </th>
@@ -71,21 +85,18 @@ $(document).ready(function () {
     <td width="160px">
        <ul  class="mcd-menu">
 			<li>
-				<button class="edit-component" id="component.txt">
-					<i >
-					<strong>Components</strong></i>
+				<button class="edit-component" id="php/components.php">
+					<i><strong>Components</strong></i>
 				</button>
 			</li>
  			<li>
-				<button class="edit-component" id="component_function.txt">
-					<i >
-					<strong>Component Function</strong></i>
+				<button class="edit-component" id="php/component_function.php">
+					<i><strong>Component Function</strong></i>
 				</button>
 			</li> 
 			<li>
-				<button class="edit-component" id="cert_loads.txt">
-					<i >
-					<strong>Cert Loads</strong></i>
+				<button class="edit-component" id="php/cert_loads.php">
+					<i><strong>Cert Loads</strong></i>
 				</button>
 			</li>             
            
@@ -100,23 +111,39 @@ $(document).ready(function () {
 			</li>
         </ul>
     
-    </th>
+    </td>
     <td colspan="10">
+
+        <div width="10px"></div>
         <div id="content">
             <h4>    				
                 <strong>使用指南：</strong><br>
             </h4>         						
             
         </div>  
+    </td>
         
-    </th>
+  </tr>
+  <tr id="footer" height="40px">
+  <td>0</td>
+  <td>1</td>
+  <td>2</td>
+  <td>3</td>
+  <td>4</td>
+  <td>5</td>
+  <td>6</td>
+  <td>7</td>
+  <td>8</td>
+  <td>9</td>
+  <td>a</td>
+  <td>b</td>
   </tr>
 </table>
 
-<div id="divid"><h2>Let jQuery AJAX Change This Text</h2</div>
-<button>Get External Content</button>
 
-<!-- -->
+
+<!--<div id="divid"><h2>Let jQuery AJAX Change This Text</h2</div>
+<button>Get External Content</button> -->
 
 
 <!--
